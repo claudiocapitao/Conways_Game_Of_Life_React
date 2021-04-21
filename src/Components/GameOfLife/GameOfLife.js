@@ -208,6 +208,7 @@ const GameOfLife = () => {
     }
 
     const refreshCanvas = () => {
+        setHideNumberOfAliveSquares(true);
         stopGameOfLife();
         numberOfGenerations.current = 0;
         numberOfAlive.current = 0;
@@ -234,9 +235,8 @@ const GameOfLife = () => {
         squaresBoardNotRunning(gameOfLifeBoard.current);
     }
 
-    const [hideNumberOfAliveSquares, setHideNumberOfAliveSquares] = useState(false);
+    const [hideNumberOfAliveSquares, setHideNumberOfAliveSquares] = useState(true);
     const [hideExamples, setHideExamples] = useState(false);
-
 
     const moveToAfterClickExample = useRef(null)
     const executeMoveToAfterClickExample = () => moveToAfterClickExample.current.scrollIntoView()
@@ -260,6 +260,7 @@ const GameOfLife = () => {
                 <button className={styles.button}
                     style={{ cursor: "pointer" }}
                     onClick={() => {
+                        setHideNumberOfAliveSquares(false);
                         boardState.current = true;
                         startGameOfLife();
                     }}>
@@ -330,6 +331,7 @@ const GameOfLife = () => {
                                             onClick={() => {
                                                 executeMoveToAfterClickExample();
                                                 loadExample(imageAndArray.exampleArray);
+                                                setHideNumberOfAliveSquares(false);
                                                 boardState.current = true;
                                                 startGameOfLife();
                                             }}
