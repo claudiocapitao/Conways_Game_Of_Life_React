@@ -236,7 +236,7 @@ const GameOfLife = () => {
 
     const [hideNumberOfAliveSquares, setHideNumberOfAliveSquares] = useState(false);
     const [hideExamples, setHideExamples] = useState(false);
-    const [hideOptions, setHideOptions] = useState(false);
+
 
     const moveToAfterClickExample = useRef(null)
     const executeMoveToAfterClickExample = () => moveToAfterClickExample.current.scrollIntoView()
