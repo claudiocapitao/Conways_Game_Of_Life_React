@@ -18,3 +18,4 @@ Deployment:
     - Heroku
 
 Link:
+    - https://conways-game-of-life--react.herokuapp.com/
